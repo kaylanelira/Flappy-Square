@@ -20,7 +20,7 @@ function renderToDo(todo) {
     node.innerHTML = `
         <input id="${todo.id}" type="checkbox"/>
         <label for="${todo.id}" class="tick js-tick"></label>
-        <span>${todo.text}</span>
+        <span>${todo.text}  </span>
         <button class="delete-todo js-delete-todo">✗</button>
     `;
     
