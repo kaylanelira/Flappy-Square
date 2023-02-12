@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="todoStyle.css">
+    <link rel="stylesheet" type="text/css" href="pomoStyle.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Maven+Pro" rel="stylesheet">  
 </head>
 
 <main>
-    <div class="container">
+  <div class="PomoToDo">
+    <div class="todo-container">
       <h1 class="app-title">todos🗒</h1>
       <ul class="todo-list js-todo-list"></ul>
       <div class="empty-state">
@@ -20,6 +22,17 @@
         <input autofocus type="text" aria-label="Enter a new todo item" placeholder="E.g. Study for 25min" class="js-todo-input">
       </form>
     </div>
+
+    <div class="pomo-container">
+      <h1 class="app-title">Pomodoro</h1>
+        <div class="pomo-actions">
+          <button id="pomo-start">Start</button>  
+          <button id="pomo-pause">Pause</button>
+          <button id="pomo-stop">Stop</button>
+        </div>
+    </div>
+  </div>
 </main>
 
-  <script src="basic.js"></script>  
+<script src="todos.js"></script>
+<script src="pomo.js"></script>    

@@ -3,6 +3,23 @@ html {
     background-color: #432818;
 }
 
+.PomoToDo {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.todo-container {
+    width: 50%;
+    left: 0;
+    position: absolute;
+    margin: 30px;
+}
+
 *, *::before, *::after {
     box-sizing: inherit;
     margin: 1;
@@ -14,16 +31,10 @@ body {
     color: #ffe6a7;
 }
 
-.container {
-    width: 100%;
+/* .todo-container {
     margin: 0 auto;
-    padding-left: 100px;
-    padding-right: 100px;
-    height: 90vh;
-    margin-top: 5vh;
-    margin-bottom: 5vh;
     overflow-y: auto;
-}
+} */
 
 .app-title {
     text-align: left;
@@ -94,7 +105,7 @@ form {
 
 input[type="text"] {
     height: 30px;
-    width: 500px;
+    width: 80%;
     font-size: 15px;
     font-weight: 400;
     color: #ffe6a7;
