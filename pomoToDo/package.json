@@ -1,0 +1,9 @@
+{
+  "name": "pomoToDo",
+  "lockfileVersion": 3,
+  "requires": true,
+  "scripts": {
+    "start": "node pomo.js"
+  },
+  "packages": {}
+}
