@@ -5,5 +5,8 @@
   "scripts": {
     "start": "node pomo.js"
   },
-  "packages": {}
+  "packages": {},
+  "dependencies": {
+    "progressbar.js": "^1.1.0"
+  }
 }

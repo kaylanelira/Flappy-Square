@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <head>
+    <title>PomoToDo</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link rel="stylesheet" type="text/css" href="todoStyle.css">
     <link rel="stylesheet" type="text/css" href="pomoStyle.css">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" rel="stylesheet"/>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Maven+Pro" rel="stylesheet">  
 </head>
 
-<main>
+<body>
   <div class="PomoToDo">
     <div class="todo-container">
       <h1 class="app-title">todos🗒</h1>
@@ -25,14 +31,42 @@
 
     <div class="pomo-container">
       <h1 class="app-title">Pomodoro</h1>
+        <div>
+          <input 
+            type="text"
+            id="pomo-clock-work"
+            placeholder="E.g. 25 min"
+          />
+        </div>
         <div class="pomo-actions">
-          <button id="pomo-start">Start</button>  
-          <button id="pomo-pause">Pause</button>
-          <button id="pomo-stop">Stop</button>
+          <button class="pomo-play-pause">
+            <i class="fas fa-play" id="play-icon"></i>
+          </button>
+          <button class="pomo-play-pause">
+            <i class="fas fa-pause hidden" class="hidden" id="pause-icon"></i>
+          </button>
+          <button id="pomo-stop">
+            <i class="fas fa-stop" id="stop-icon"></i>
+          </button>
+        </div>
+        <div class="pomo-actions">
+          <div class="pomo-input">
+            <label>Work duration</label>
+            <input name="input-break-duration" id="input-work-duration" type="number"/>
+          </div>
+          <div class="pomo-input">
+            <label>Break duration</label>
+            <input name="input-break-duration" id="input-break-duration" type="number"/>
+          </div>
+        </div>
+        <div class="pomo-info">
+          <h2>Your Sessions</h2>
+          <ul id="pomo-sessions"></ul>
         </div>
     </div>
   </div>
   <script defer src="pomo.js"></script>
   <script src="todos.js"></script>
+  <script src="progressbar.js"></script>
     
-</main>  
+</body>  
