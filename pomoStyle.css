@@ -1,0 +1,50 @@
+.pomo-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    right: 0;
+    justify-content: center;
+    align-content: center;
+    position: absolute;
+}
+
+.pomo-clock {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+#pomo-clock-work {
+    display: inline-block;
+    width: 300px;
+    margin-top: 10px;
+}
+
+.progressBarText {
+    text-align: center;
+    font-size: 50px;
+    position: absolute;
+}
+
+.pomo-actions button {
+    height: 40px;
+    width: 40px;
+    color: #9c6644;
+    background-color: #432818;
+    border-width: 0px;
+}
+
+.pomodoro-input {
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    margin-right: 10px;
+}
+
+.pomo-input input {
+    background-color: #5a2d0c;
+    border: 2px solid #432818;
+    color: #ffe6a7;
+}

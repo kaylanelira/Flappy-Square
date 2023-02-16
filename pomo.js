@@ -1,7 +1,8 @@
 const pomoTimer = document.querySelector('.pomo-container');
 
-const startButton = document.querySelector('.pomo-play-pause');
+const startButton = document.querySelector('#pomo-start');
 const stopButton = document.querySelector('#pomo-stop');
+const pauseButton = document.querySelector('#pomo-pause');
 
 let isClockRunning = false;
 let isClockStopped = true;
@@ -28,6 +29,9 @@ startButton.addEventListener('click', () => {
     toggleClock()
 });
 stopButton.addEventListener('click', () => {
+    toggleClock(1)
+});
+pauseButton.addEventListener('click', () => {
     toggleClock()
 });
 
@@ -39,6 +43,23 @@ breakSessionSec.addEventListener('input', () => {
     updatedBreakSessionSec = minuteToSeconds(breakSessionSec.value);
 });
 
+const progressBar = new ProgressBar.Circle('#pomo-timer', {
+    strokeWidth: 3,
+    text: {
+        autoStyleContainer: false,
+        className: 'progressBarText',
+        value: '25:00',
+    },
+    trailColor: '#ffe6a7',
+    color: '#9c6644',
+})
+
+function calculateTimeProgress() {
+    const sessionDuration =
+        type === 'work' ? workSessionSec : breakSessionSec;
+    return (timeLeftInSession / sessionDuration) * 10;
+}
+
 function minuteToSeconds(min) {
     return min * 60;
 }
@@ -49,6 +70,7 @@ function toggleClock(reset) {
         // stop timer
         stopClock();
     } else {
+        console.log(isClockStopped);
         if (isClockStopped) {
             setUpdatedTimers();
             isClockStopped = false;
@@ -61,9 +83,10 @@ function toggleClock(reset) {
             // start timer
             isClockRunning = true;
             // decreasing time by every second
-            clockTimer = setInterval(() => {
+            clockTimer =  setInterval(() => {
                 minusTime();
                 displayTimeLeft();
+                progressBar.set(calculateTimeProgress());
             }, 1000);
         }
         showStopIcon();
@@ -85,7 +108,7 @@ function displayTimeLeft() {
 
     if (hours > 0) result += `${hours}:`;
     result += `${addLeadingZeroes(minutes)}:${addLeadingZeroes(seconds)}`;
-    pomoTimer.innerText = result.toString();
+    progressBar.text.innerText = result.toString();
 }
 
 // stop and redefine clock
@@ -172,11 +195,11 @@ function togglePlayPauseIcon(reset) {
             playIcon.classList.remove('hidden');
         }
         if (!pauseIcon.classList.contains('hidden')) {
-            pauseIcon.classList.add('hidden');
+        pauseIcon.classList.add('hidden');
         }
     } else {
         playIcon.classList.toggle('hidden');
-        pauseIcon.classList.remove('hidden');
+        pauseIcon.classList.toggle('hidden');
     }
 }
 
