@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>PomoToDo</title>
-      <link rel="stylesheet" type="text/css" href="todoStyle.css">
-      <link rel="stylesheet" type="text/css" href="pomoStyle.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PomoToDo</title>
+    <link rel="stylesheet" type="text/css" href="todoStyle.css">
+    <link rel="stylesheet" type="text/css" href="pomoStyle.css">
 
-      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" rel="stylesheet"/>
-      <script src="progressBar.js"></script>
-      <script defer src="pomo.js"></script>
-      <script defer src="todos.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" rel="stylesheet"/>
+    <script src="progressBar.js"></script>
+    <script defer src="pomo.js"></script>
+    <script defer src="todos.js"></script>
 
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Maven+Pro" rel="stylesheet">  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro" rel="stylesheet">  
   </head>
 
   <body>
@@ -37,14 +37,14 @@
           <h1 class="app-title">Pomodoro</h1>
           <div id="pomo-timer"></div>
             <div class="pomo-actions">
-              <button id="pomo-start">
+              <button id="pomo-start" title="Start">
                 <i class="fas fa-play" id="play-icon"></i>
                 <i class="fas fa-pause hidden" id="pause-icon"></i>
               </button>              
-              <button id="pomo-pause" class="hidden">
-                <i class="fas fa-pause hidden" id="pause-icon"></i>
+              <button id="pomo-pause" class="hidden" title="Pause">
+                <i class="fas fa-pause hidden"></i>
               </button>
-              <button id="pomo-stop" class="hidden">
+              <button id="pomo-stop" class="hidden" title="Stop">
                 <i class="fas fa-stop" id="stop-icon"></i>
               </button>
             </div>
@@ -55,11 +55,11 @@
             <div class="pomo-actions">
               <div class="pomo-input">
                 <label>Work duration</label>
-                <input name="input-work-duration" id="input-work-duration" type="number"/>
+                <input name="input-work-duration" id="input-work-duration" type="number" title="Input Work"/>
               </div>
               <div class="pomo-input">
                 <label>Break duration</label>
-                <input name="input-break-duration" id="input-break-duration" type="number"/>
+                <input name="input-break-duration" id="input-break-duration" type="number" title="Input Break"/>
               </div>
             </div>
             <div class="pomo-info">
