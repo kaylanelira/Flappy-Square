@@ -9,6 +9,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let type = 'work';
 
+    // SOUND
+    let bellSound = new Audio('classic-gong-1066.wav');
+    let buttonSound = new Audio('button-sound.wav');
+
     let currentTaskLabel = document.querySelector('#pomo-clock-work');
 
     // TIME VARIABLES
@@ -39,11 +43,14 @@ document.addEventListener("DOMContentLoaded", () => {
     // EVENT LISTENER TO BUTTONS: START, STOP AND PAUSE
     startButton.addEventListener('click', () => {
         toggleClock();
+        buttonSound.play();
     });
     stopButton.addEventListener('click', () => {
         toggleClock(true);
+        buttonSound.play();
     });
     pauseButton.addEventListener('click', () => {
+        buttonSound.play();
         toggleClock();
     });
 
@@ -68,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function toggleClock(reset) {
         togglePlayPauseIcon(reset);
-        if (reset) {
+        if (reset) {       
             // stop timer
             stopClock();
         } else {
@@ -133,6 +140,8 @@ document.addEventListener("DOMContentLoaded", () => {
             timeSpentInSession++;
         } else if (timeLeftInSession === 0) {
             timeSpentInSession = 0;
+            // play sound
+            bellSound.play();
             // Timer is over -> if work switch to break, viceversa
             if (type === 'work') {
                 timeLeftInSession = breakSessionTime;

@@ -1,6 +1,14 @@
 html {
+    min-height: 100%;
     box-sizing: border-box;
     background-color: #432818;
+}
+
+footer {
+    font-size: xx-small;
+    flex-shrink: 0;
+    bottom: 0;
+    position: absolute;
 }
 
 ::placeholder {
