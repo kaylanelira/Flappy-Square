@@ -1,6 +1,3 @@
-# Construct-2
-Repositório com mini projetos criados durante o estudo de construção de jogos com o Construct 2.
-
 # Flappy Square
 ![image](https://user-images.githubusercontent.com/97316221/182048510-d85372da-6cc2-4859-be95-983712f813a0.png)
 
